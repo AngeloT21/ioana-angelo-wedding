@@ -7,7 +7,8 @@
   <title>Ioana & Angelo | 17 Octombrie 2026</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -51,8 +52,11 @@
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(rgba(75, 52, 40, 0.35), rgba(75, 52, 40, 0.55)),
-        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80');
+        linear-gradient(
+          rgba(58, 35, 25, 0.45),
+          rgba(75, 38, 33, 0.62)
+        ),
+        url('https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?auto=format&fit=crop&w=1800&q=85');
       background-size: cover;
       background-position: center;
       color: var(--ivory);
@@ -65,6 +69,7 @@
       font-size: 180px;
       color: rgba(255, 248, 239, 0.13);
       font-family: serif;
+      pointer-events: none;
     }
 
     .hero::before {
@@ -83,34 +88,39 @@
       max-width: 900px;
       position: relative;
       z-index: 1;
-      padding: 40px 24px;
+      padding: 44px 28px;
       border: 1px solid rgba(255, 248, 239, 0.45);
       border-radius: 34px;
       backdrop-filter: blur(4px);
-      background: rgba(75, 52, 40, 0.18);
+      background: rgba(75, 52, 40, 0.22);
       box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
     }
 
     .eyebrow {
-      margin: 0 0 14px;
+      margin: 0 0 18px;
       text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 0.85rem;
+      letter-spacing: 5px;
+      font-size: 0.8rem;
       font-weight: 500;
+      color: var(--champagne);
     }
 
     h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(4.2rem, 12vw, 8rem);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4rem, 11vw, 8rem);
       line-height: 0.95;
       margin: 0;
-      font-weight: 400;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--ivory);
     }
 
     .date {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2rem, 5vw, 3.4rem);
       margin: 20px 0 12px;
+      color: var(--champagne);
     }
 
     .hero-text {
@@ -118,6 +128,7 @@
       margin: 0 auto 28px;
       font-size: 1.05rem;
       line-height: 1.8;
+      color: rgba(255, 248, 239, 0.95);
     }
 
     .button {
@@ -158,9 +169,10 @@
     }
 
     h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Cormorant Garamond', serif;
       color: var(--burgundy);
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2.3rem, 5vw, 3.3rem);
+      font-weight: 600;
       margin: 0 0 12px;
     }
 
@@ -215,15 +227,21 @@
     }
 
     .card h3 {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Cormorant Garamond', serif;
       color: var(--terracotta);
-      font-size: 1.55rem;
+      font-size: 1.75rem;
+      font-weight: 600;
       margin: 0 0 12px;
+    }
+
+    .card p {
+      line-height: 1.7;
+      margin: 8px 0;
     }
 
     .time {
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 12px;
       padding: 8px 18px;
       border-radius: 999px;
       background: rgba(182, 101, 61, 0.12);
@@ -239,27 +257,10 @@
       line-height: 1.9;
     }
 
-    .dress-code {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 24px;
-    }
-
-    .chip {
-      border: 1px solid rgba(111, 46, 55, 0.2);
-      background: rgba(255, 248, 239, 0.8);
-      color: var(--brown);
-      border-radius: 999px;
-      padding: 9px 16px;
-      font-size: 0.92rem;
-    }
-
     .countdown {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 5vw, 2.5rem);
-      font-weight: 700;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 600;
       color: var(--burgundy);
       line-height: 1.5;
     }
@@ -275,6 +276,7 @@
       font-family: 'Great Vibes', cursive;
       font-size: 2.8rem;
       margin: 12px 0 0;
+      color: var(--champagne);
     }
 
     @media (max-width: 768px) {
@@ -293,6 +295,16 @@
       .hero::before,
       .hero::after {
         font-size: 110px;
+      }
+
+      .hero::before {
+        top: 20px;
+        left: 20px;
+      }
+
+      .hero::after {
+        bottom: 20px;
+        right: 20px;
       }
     }
   </style>
@@ -385,49 +397,31 @@
     </div>
   </section>
 
-  <section class="section alt">
+  <section class="section alt" id="rsvp">
     <div class="section-inner">
-      <h2>Dress code</h2>
+      <h2>RSVP</h2>
       <p class="subtitle">
-        Ne-am bucura să păstrăm atmosfera caldă de toamnă și în ținute.
-        Elegant, relaxat, în nuanțe naturale sau tomnatice.
+        Prezența voastră înseamnă enorm pentru noi.
       </p>
       <div class="divider"></div>
 
-      <div class="dress-code">
-        <span class="chip">Burgundy</span>
-        <span class="chip">Terracotta</span>
-        <span class="chip">Olive</span>
-        <span class="chip">Champagne</span>
-        <span class="chip">Ciocolatiu</span>
-        <span class="chip">Auriu discret</span>
+      <div class="card story-card">
+        <p>
+          Vă rugăm să confirmați participarea până la
+          <strong>30 Septembrie 2026</strong>.
+        </p>
+
+        <p>
+          Pentru orice întrebare, ne puteți scrie sau suna cu drag.
+        </p>
+
+        <a
+          class="button"
+          href="https://forms.gle/Bd3WT7WERH3X99ph7"
+          target="_blank">
+          Completează formularul RSVP
+        </a>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="rsvp">
-    <h2>RSVP</h2>
-    <p class="subtitle">
-      Prezența voastră înseamnă enorm pentru noi.
-    </p>
-    <div class="divider"></div>
-
-    <div class="card story-card">
-      <p>
-        Vă rugăm să confirmați participarea până la
-        <strong>30 Septembrie 2026</strong>.
-      </p>
-
-      <p>
-        Pentru orice întrebare, ne puteți scrie sau suna cu drag.
-      </p>
-
-      <a
-        class="button"
-        href="https://forms.gle/Bd3WT7WERH3X99ph7"
-        target="_blank">
-        Completează formularul RSVP
-      </a>
     </div>
   </section>
 
