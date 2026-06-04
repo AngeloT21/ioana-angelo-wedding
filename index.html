@@ -11,6 +11,10 @@
 
 <style>
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     margin:0;
     font-family:Montserrat,sans-serif;
@@ -26,10 +30,23 @@ body{
     align-items:center;
     text-align:center;
     padding:40px;
-    background:linear-gradient(rgba(255,255,255,.75),rgba(255,255,255,.75)),
+
+    background:
+    linear-gradient(rgba(255,255,255,.75),
+    rgba(255,255,255,.75)),
     url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+
     background-size:cover;
     background-position:center;
+
+    color:#4d3a2f;
+    text-shadow:0 1px 3px rgba(255,255,255,0.5);
+}
+
+.hero p:first-child{
+    font-size:1.2rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
 }
 
 h1{
@@ -41,6 +58,11 @@ h1{
 .date{
     font-size:1.5rem;
     margin-top:20px;
+}
+
+h2{
+    color:#b66a2c;
+    margin-bottom:30px;
 }
 
 .section{
@@ -56,6 +78,11 @@ h1{
     padding:30px;
     margin:20px 0;
     box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:transform .3s ease;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 .countdown{
@@ -64,7 +91,7 @@ h1{
     color:#b66a2c;
 }
 
-a.button{
+.button{
     display:inline-block;
     padding:14px 28px;
     background:#b66a2c;
@@ -72,11 +99,32 @@ a.button{
     text-decoration:none;
     border-radius:50px;
     margin-top:20px;
+    transition:.3s;
+}
+
+.button:hover{
+    opacity:.9;
+    transform:translateY(-2px);
 }
 
 footer{
     text-align:center;
     padding:40px;
+    background:#fff;
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:3.5rem;
+    }
+
+    .countdown{
+        font-size:1.3rem;
+        line-height:1.6;
+    }
+
 }
 
 </style>
@@ -84,8 +132,19 @@ footer{
 <body>
 
 <section class="hero">
+
+    <p>Ne căsătorim!</p>
+
     <h1>Ioana & Angelo</h1>
-    <p class="date">17 Octombrie 2026</p>
+
+    <p class="date">
+        17 Octombrie 2026
+    </p>
+
+    <a class="button" href="#rsvp">
+        Confirmă participarea
+    </a>
+
 </section>
 
 <section class="section">
@@ -93,34 +152,90 @@ footer{
     <h2>Programul Zilei</h2>
 
     <div class="card">
+
         <h3>⛪ Ceremonia Religioasă</h3>
+
         <p>Biserica Sfântul Fanurie</p>
+
         <p>Strada Cerceluș 18, București</p>
+
         <strong>14:30</strong>
+
     </div>
 
     <div class="card">
+
         <h3>🎉 Petrecerea</h3>
+
         <p>The Sunset Barn</p>
+
         <p>Str. Libertății, 077035 Bălăceanca</p>
+
         <strong>18:30</strong>
+
     </div>
 
 </section>
 
 <section class="section">
 
+    <h2>Locații</h2>
+
+    <div class="card">
+
+        <h3>⛪ Biserica Sfântul Fanurie</h3>
+
+        <p>Strada Cerceluș 18, București</p>
+
+        <a
+            class="button"
+            href="https://maps.google.com/?q=Strada+Cerceluș+18+București"
+            target="_blank">
+            Deschide în Google Maps
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <h3>🎉 The Sunset Barn</h3>
+
+        <p>Str. Libertății, 077035 Bălăceanca</p>
+
+        <a
+            class="button"
+            href="https://maps.google.com/?q=The+Sunset+Barn+Bălăceanca"
+            target="_blank">
+            Deschide în Google Maps
+        </a>
+
+    </div>
+
+</section>
+
+<section class="section" id="rsvp">
+
     <h2>RSVP</h2>
 
     <div class="card">
-        <p>Vă rugăm să confirmați participarea până la:</p>
 
-        <h3>30 Septembrie 2026</h3>
+        <p>
+            Vă rugăm să confirmați participarea până la
+            <strong>30 Septembrie 2026</strong>
+        </p>
 
         <p>
             Ioana: 0721 368 130<br>
             Angelo: 0764 563 867
         </p>
+
+        <a
+            class="button"
+            href="https://forms.gle/Bd3WT7WERH3X99ph7"
+            target="_blank">
+            Completează formularul RSVP
+        </a>
+
     </div>
 
 </section>
@@ -134,26 +249,48 @@ footer{
 </section>
 
 <footer>
-    Vă așteptăm cu drag!
+
+    <p>Vă așteptăm cu drag!</p>
+
+    <p>Ioana & Angelo ❤️</p>
+
 </footer>
 
 <script>
 
 const targetDate = new Date("2026-10-17T14:30:00");
 
-function updateCountdown(){
+function updateCountdown() {
 
     const now = new Date();
     const diff = targetDate - now;
 
-    const days = Math.floor(diff/(1000*60*60*24));
+    if(diff <= 0){
+
+        document.getElementById("countdown").innerHTML =
+        "Astăzi este ziua cea mare! ❤️";
+
+        return;
+    }
+
+    const days =
+    Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    const hours =
+    Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+    const minutes =
+    Math.floor((diff / (1000 * 60)) % 60);
+
+    const seconds =
+    Math.floor((diff / 1000) % 60);
 
     document.getElementById("countdown").innerHTML =
-        days + " zile";
-
+        `${days} zile · ${hours} ore · ${minutes} minute · ${seconds} secunde`;
 }
 
 updateCountdown();
+
 setInterval(updateCountdown,1000);
 
 </script>
