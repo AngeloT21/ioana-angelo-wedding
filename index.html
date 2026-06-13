@@ -12,16 +12,16 @@
 
   <style>
     :root {
-      --ivory: #fff8ef;
-      --cream: #f6eadc;
-      --champagne: #ead6bd;
-      --terracotta: #b6653d;
-      --copper: #c5794a;
-      --burgundy: #6f2e37;
-      --olive: #6f7654;
-      --brown: #4b3428;
-      --gold: #c8a96a;
-      --shadow: rgba(75, 52, 40, 0.16);
+      --ivory: #F8F4EC; /* Pergament luminos */
+      --cream: #EAE0D3;
+      --champagne: #D4AF37; 
+      --terracotta: #C45C24; /* Portocaliu tomnatic */
+      --copper: #9A4119;
+      --burgundy: #5C2A18; /* Roșcat-maroniu pentru titluri */
+      --olive: #736E46; 
+      --brown: #3E200F; /* Maro închis pentru text principal */
+      --gold: #C09A53; /* Auriu pentru chenare */
+      --shadow: rgba(62, 32, 15, 0.12);
     }
 
     * {
@@ -35,10 +35,10 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(198, 121, 74, 0.22), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(111, 46, 55, 0.18), transparent 30%),
-        var(--ivory);
+      background: var(--ivory);
+      background-image: 
+        radial-gradient(circle at top right, rgba(196, 92, 36, 0.05), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(192, 154, 83, 0.08), transparent 40%);
       color: var(--brown);
     }
 
@@ -53,114 +53,94 @@
       overflow: hidden;
       background:
         linear-gradient(
-          rgba(75, 52, 40, 0.75), 
-          rgba(111, 46, 55, 0.85) 
+          rgba(248, 244, 236, 0.88), /* Filtru pergament peste imagine */
+          rgba(248, 244, 236, 0.95)
         ),
-        url('https://images.unsplash.com/photo-1507339622713-334b5b29b634?auto=format&fit=crop&w=1800&q=85');
+        url('https://images.unsplash.com/photo-1538300095819-2708304910f4?auto=format&fit=crop&w=1800&q=80');
       background-size: cover;
       background-position: center;
-      color: var(--ivory);
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "❦";
-      position: absolute;
-      font-size: 180px;
-      color: rgba(255, 248, 239, 0.13);
-      font-family: serif;
-      pointer-events: none;
-    }
-
-    .hero::before {
-      top: 40px;
-      left: 40px;
-      transform: rotate(-20deg);
-    }
-
-    .hero::after {
-      bottom: 40px;
-      right: 40px;
-      transform: rotate(160deg);
     }
 
     .hero-content {
       max-width: 900px;
       position: relative;
       z-index: 1;
-      padding: 44px 28px;
-      border: 1px solid rgba(255, 248, 239, 0.45);
-      border-radius: 34px;
-      backdrop-filter: blur(4px);
-      background: rgba(75, 52, 40, 0.22);
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+      padding: 50px 30px;
+      /* Chenar auriu dublu inspirat din invitație */
+      border: 1px solid var(--gold);
+      border-radius: 24px;
+      background: rgba(248, 244, 236, 0.75);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 0 6px rgba(248, 244, 236, 0.5), 0 20px 50px rgba(62, 32, 15, 0.15);
     }
 
     .eyebrow {
-      margin: 0 0 18px;
+      margin: 0 0 15px;
       text-transform: uppercase;
-      letter-spacing: 5px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--champagne);
+      letter-spacing: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--terracotta);
     }
 
     h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(4rem, 11vw, 8rem);
+      font-size: clamp(3.5rem, 10vw, 7.5rem);
       line-height: 0.95;
       margin: 0;
       font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--ivory);
+      color: var(--brown);
     }
 
     .date {
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      margin: 20px 0 12px;
-      color: var(--champagne);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin: 25px 0 15px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--burgundy);
     }
 
     .hero-text {
       max-width: 620px;
       margin: 0 auto 28px;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       line-height: 1.8;
-      color: rgba(255, 248, 239, 0.95);
+      color: var(--brown);
+      font-weight: 400;
     }
 
     .button {
       display: inline-block;
-      padding: 14px 30px;
-      background: var(--burgundy);
+      padding: 14px 32px;
+      background: var(--terracotta);
       color: var(--ivory);
       text-decoration: none;
       border-radius: 999px;
-      margin-top: 12px;
-      font-weight: 600;
-      box-shadow: 0 12px 28px rgba(75, 52, 40, 0.28);
+      margin-top: 15px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      box-shadow: 0 8px 20px rgba(196, 92, 36, 0.25);
       transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
     }
 
     .button:hover {
-      background: var(--terracotta);
+      background: var(--burgundy);
       transform: translateY(-2px);
-      box-shadow: 0 16px 32px rgba(75, 52, 40, 0.34);
+      box-shadow: 0 12px 25px rgba(92, 42, 24, 0.3);
     }
 
     .section {
       max-width: 980px;
       margin: auto;
-      padding: 78px 20px;
+      padding: 80px 20px;
       text-align: center;
       position: relative;
     }
 
     .section.alt {
       max-width: 100%;
-      background: linear-gradient(135deg, rgba(198, 121, 74, 0.13), rgba(111, 46, 55, 0.08));
+      background: linear-gradient(135deg, rgba(234, 224, 211, 0.4), transparent);
     }
 
     .section-inner {
@@ -171,7 +151,7 @@
     h2 {
       font-family: 'Cormorant Garamond', serif;
       color: var(--burgundy);
-      font-size: clamp(2.3rem, 5vw, 3.3rem);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       font-weight: 600;
       margin: 0 0 12px;
     }
@@ -180,131 +160,123 @@
       max-width: 650px;
       margin: 0 auto 36px;
       line-height: 1.8;
-      color: rgba(75, 52, 40, 0.82);
+      color: rgba(62, 32, 15, 0.8);
     }
 
     .divider {
-      width: 120px;
+      width: 140px;
       height: 1px;
       background: var(--gold);
-      margin: 0 auto 36px;
+      margin: 0 auto 40px;
       position: relative;
     }
 
     .divider::before {
-      content: "🍂";
+      content: "♥";
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -52%);
       background: var(--ivory);
-      padding: 0 12px;
-      font-size: 1rem;
+      padding: 0 15px;
+      font-size: 1.2rem;
+      color: var(--gold);
     }
 
     .alt .divider::before {
-      background: #f6eadc;
+      background: #f1ebd8; /* Adaptat pentru secțiunea alt */
     }
 
     .card-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
+      gap: 25px;
     }
 
     .card {
-      background: rgba(255, 248, 239, 0.92);
-      border: 1px solid rgba(200, 169, 106, 0.55);
-      border-radius: 28px;
-      padding: 32px 26px;
-      box-shadow: 0 12px 35px var(--shadow);
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(192, 154, 83, 0.4);
+      border-radius: 20px;
+      padding: 35px 25px;
+      box-shadow: 0 10px 30px var(--shadow);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 45px rgba(75, 52, 40, 0.22);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(62, 32, 15, 0.15);
     }
 
     .card h3 {
       font-family: 'Cormorant Garamond', serif;
-      color: var(--terracotta);
-      font-size: 1.75rem;
+      color: var(--burgundy);
+      font-size: 1.8rem;
       font-weight: 600;
-      margin: 0 0 12px;
+      margin: 0 0 15px;
     }
 
     .card p {
       line-height: 1.7;
-      margin: 8px 0;
+      margin: 6px 0;
+      color: var(--brown);
     }
 
     .time {
       display: inline-block;
-      margin-top: 12px;
-      padding: 8px 18px;
+      margin-top: 15px;
+      padding: 6px 16px;
+      border: 1px solid var(--terracotta);
       border-radius: 999px;
-      background: rgba(182, 101, 61, 0.12);
-      color: var(--burgundy);
-      font-weight: 700;
+      color: var(--terracotta);
+      font-weight: 600;
       letter-spacing: 1px;
     }
 
     .story-card {
       max-width: 760px;
       margin: auto;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       line-height: 1.9;
+    }
+
+    .contact-info {
+      margin-top: 25px;
+      font-size: 0.95rem;
+      color: var(--burgundy);
     }
 
     .countdown {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-size: clamp(2rem, 6vw, 3rem);
       font-weight: 600;
-      color: var(--burgundy);
+      color: var(--terracotta);
       line-height: 1.5;
     }
 
     footer {
       text-align: center;
-      padding: 50px 20px;
-      background: var(--brown);
-      color: var(--ivory);
+      padding: 60px 20px;
+      background: var(--ivory);
+      border-top: 1px solid rgba(192, 154, 83, 0.3);
+      color: var(--brown);
     }
 
     footer .signature {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.8rem;
-      margin: 12px 0 0;
-      color: var(--champagne);
+      font-size: 3.2rem;
+      margin: 15px 0 0;
+      color: var(--burgundy);
     }
 
     @media (max-width: 768px) {
       .hero-content {
-        padding: 34px 18px;
+        padding: 35px 20px;
       }
-
       .card-grid {
         grid-template-columns: 1fr;
       }
-
       .section {
-        padding: 62px 18px;
-      }
-
-      .hero::before,
-      .hero::after {
-        font-size: 110px;
-      }
-
-      .hero::before {
-        top: 20px;
-        left: 20px;
-      }
-
-      .hero::after {
-        bottom: 20px;
-        right: 20px;
+        padding: 60px 15px;
       }
     }
   </style>
@@ -315,8 +287,8 @@
   <section class="hero">
     <div class="hero-content">
       <p class="eyebrow">Ne căsătorim</p>
-      <h1>Ioana & Angelo</h1>
-      <p class="date">17 Octombrie 2026</p>
+      <h1>Ioana <br><span style="font-size: 0.6em; font-family: 'Great Vibes', cursive; color: var(--terracotta);">și</span><br> Angelo</h1>
+      <p class="date">· 17 ·<br><span style="font-size: 0.6em; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 3px;">Octombrie 2026</span></p>
       <p class="hero-text">
         O zi de toamnă, iubire, familie, prieteni dragi și o seară pe care vrem să o ținem minte mereu.
       </p>
@@ -350,19 +322,19 @@
       <div class="card-grid">
         <div class="card">
           <h3>
-            <img src="https://img.icons8.com/?size=100&id=Ah6Z4w44PijN&format=png&color=000000" alt="Biserică" style="height: 1.2em; vertical-align: middle; margin-right: 6px;" />
-            Ceremonia religioasă
+            <img src="https://img.icons8.com/?size=100&id=Ah6Z4w44PijN&format=png&color=5C2A18" alt="Biserică" style="height: 1.2em; vertical-align: middle; margin-right: 6px;" />
+            Cununia religioasă
           </h3>
           <p>Biserica Sfântul Fanurie</p>
           <p>Strada Cerceluș 18, București</p>
-          <span class="time">14:30</span>
+          <span class="time">ORA 14:30</span>
         </div>
 
         <div class="card">
           <h3>🥂 Petrecerea</h3>
           <p>The Sunset Barn</p>
           <p>Str. Libertății, Bălăceanca</p>
-          <span class="time">18:00</span>
+          <span class="time">ORA 18:00</span>
         </div>
       </div>
     </div>
@@ -377,8 +349,8 @@
 
     <div class="card-grid">
       <div class="card">
-       <h3>
-          <img src="https://img.icons8.com/?size=100&id=Ah6Z4w44PijN&format=png&color=000000" alt="Biserică" style="height: 1.2em; vertical-align: middle; margin-right: 6px;" />
+        <h3>
+          <img src="https://img.icons8.com/?size=100&id=Ah6Z4w44PijN&format=png&color=5C2A18" alt="Biserică" style="height: 1.2em; vertical-align: middle; margin-right: 6px;" />
           Biserica Sfântul Fanurie
         </h3>
         <p>Strada Cerceluș 18, București</p>
@@ -391,8 +363,8 @@
       </div>
 
       <div class="card">
-        <h3>🌅 The Sunset Barn</h3>
-        <p>Str. Libertății, 077035 Bălăceanca</p>
+        <h3>🥂 The Sunset Barn</h3>
+        <p>Str. Libertății, Bălăceanca</p>
         <a
           class="button"
           href="https://www.google.com/maps/search/?api=1&query=The+Sunset+Barn,+Str.+Libertatii,+Balaceanca"
@@ -413,20 +385,21 @@
 
       <div class="card story-card">
         <p>
-          Vă rugăm să confirmați participarea până la
-          <strong>30 Septembrie 2026</strong>.
-        </p>
-
-        <p>
-          Pentru orice întrebare, ne puteți scrie sau suna cu drag.
+          Vă rugăm să ne confirmați participarea până la data de<br>
+          <strong>30.09.2026</strong>
         </p>
 
         <a
           class="button"
           href="https://forms.gle/Bd3WT7WERH3X99ph7"
           target="_blank">
-          Completează formularul RSVP
+          Completează formularul
         </a>
+
+        <div class="contact-info">
+          <p><strong>Contact:</strong></p>
+          <p>Ioana: 0721.368.130 &nbsp;|&nbsp; Angelo: 0764.563.867</p>
+        </div>
       </div>
     </div>
   </section>
